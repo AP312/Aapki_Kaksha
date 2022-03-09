@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Aapki-Kaksha-HOME</title>
+
+     <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Font -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" />
+    
+    <link rel="stylesheet" href="app.css" />
+
+    <style>
+
+        .navlink a {
+
+font-size: 15px;
+color: white;
+text-decoration: none;
+font-family: Arial, Sans-serif;
+}
+
+.navmain{
+box-sizing:border-box;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1% 1%;
+background-color:#002651;
+width:100%;
+height:60px;
+position:sticky;
+}
+
+li.navlink{
+list-style: none;
+display: inline-block;
+padding: 1% 20px;
+cursor:pointer;
+}
+
+#logo{
+padding-right:400px;
+}
+
+#logo a{
+font-family: georgia, serif;
+font-size:22px;
+}
+
+#logo1{
+padding-left:60px;
+}
+
+li.navlink:hover{
+background-color:#1f4287;
+border-radius:10px;
+box-shadow: 10px 20px 20px black;
+}
+
+#logo:hover{
+background-color:#002651;
+box-shadow: 0px 0px 0px black;
+}
+
+#logo1:hover{
+background-color:#002651;
+box-shadow: 0px 0px 0px black;
+}
+
+.hero{
+width:100%;
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+div.slider img{
+width:100%;
+height:100vh;
+animation : zoom 8s linear infinite;
+}
+
+@keyframes zoom{
+
+0%{ transform: scale(1);}
+50%{ transform: scale(1.1);}
+100%{ transform: scale(1.2);}
+
+}
+
+.over{
+width:100%;
+height:100vh;
+background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
+position:absolute;
+top:0;
+}
+
+.overcontent{
+width:50%;
+margin:160px auto 0;
+text-align:center;
+color:white;
+}
+
+.overcontent h1{
+font-size:50px;
+}
+
+.overcontent h2{
+width:100%;
+margin: 20px auto 100px;
+font-weight:100;
+line-height:25px;
+}
+
+.overcontent button{
+width:200px;
+padding:15px 0;
+text-align:center;
+margin:0 10px;
+border-radius:25px;
+font-weight:bold;
+border: 2px solid orange;
+color:white;
+background-color:orange;
+cursor:pointer;
+transition: background 0.5s;
+}
+
+.overcontent a{
+color: white;
+text-decoration: none;
+}
+
+.overcontent button:hover{
+background-color:transparent;
+border: 2px solid white;
+}
+
+button.herobutton{
+background-color:#278ea5;
+border: 2px solid #278ea5;
+}
+
+button.herobutton:hover{
+background-color:transparent;
+border: 2px solid white;
+}
+
+.flex-container{
+display:flex;
+font-family: Arial, Sans-serif;
+}
+
+.flex1-container{
+display:flex;
+font-family: Arial, Sans-serif;
+background-color:#ecfffb;
+color:#e8ffe8;
+}
+
+.flex-container h3{
+display:flex;
+color:#4592af;
+font-family: Garamond, Serif;
+font-size:25px;
+}
+
+.flex1-container h3{
+display:flex;
+color:white;
+font-family: Garamond, Serif;
+font-size: 20px;
+}
+
+.flex-container img{
+height:300px;
+padding-left:45%;
+}
+
+.flex1-container img{
+height:300px;
+padding-left:45%;
+}
+
+.flex-container div{
+width:100%;
+}
+
+.flex1-container div{
+width:200px;
+margin:100px;
+text-align:center;
+padding-left:15px ;
+padding-right:15px ;
+
+}
+
+.flex1div{
+background-color:#39bdc8;
+border-radius:10px;
+box-shadow:15px 20px 15px #085f63;
+}
+
+
+
+.flex1div1{
+border-radius:10px;
+box-shadow:15px 20px 15px #085f63;
+color:black;
+background-color:white;
+border: 8px ridge #facf5a;
+}
+
+.flex1div1 h3{
+color:#2d6cdf;
+text-align:left;
+}
+
+.flex1div1 button{
+width:200px;
+padding:15px 0;
+text-align:center;
+border-radius:25px;
+font-weight:bold;
+border: 2px solid transparent;
+color:white;
+cursor:pointer;
+
+}
+
+.flex1div1 button:hover{
+transform:scale(1.1);
+box-shadow:5px 10px 20px #a6acec;
+}
+
+
+.flex1div1 a{
+text-decoration:none;
+color:white;
+}
+
+div.flex1div:hover{
+transform:scale(1.2);
+transition:3s;
+border-radius:50px;
+cursor:pointer;
+}
+
+div.topic{
+border-radius:50px;
+}
+
+div.topic:hover{
+transform:scale(1.2);
+transition:3s;
+border-radius:50px;
+}
+
+.flex2div button{
+width:20px;
+padding:15px 30px;
+text-align:center;
+font-weight:bold;
+border: 2px solid transparent;
+background-color:transparent;
+cursor:pointer;
+}
+
+.flex2div img{
+width:30px;
+height:30px;
+}
+
+@media (max-width:800px){
+.flex-container{
+flex-direction:column;
+}
+}
+
+@media (max-width:800px){
+.flex1-container{
+flex-direction:column;
+}
+}
+
+#knowus{
+    margin:0px 50px 0px 50px;
+    padding-left: 100px;
+    background: #F0FFFF;
+    
+}
+
+#knowus:hover{
+    background: #2c7bfe;
+    transform:scale(1.05);
+    transition:3s;
+    color: white;
+    
+}
+
+#contri:hover{
+    color: white;
+    background: #2c7bfe;
+    border-radius: 100px;
+    transform:scale(1.05);
+    transition:3s;
+    
+
+}
+
+#contri{
+    margin:0px 50px 0px 50px;
+    padding-right: 100px;
+    background: #F0FFFF;
+    
+}
+
+.newcontent h3{
+    
+    color:black;
+}
+
+.newcontent h2{
+    
+    color:black;
+}
+
+.newcontent h1{
+    
+    color:black;
+}
+
+
+
+
+html{
+scroll-behavior: smooth;
+}
+
+    </style>
+
+    <script>
+        var slide = document.getElementsByClassName("slide");
+        var overcontent = document.getElementsByClassName("overcontent");
+        //var feed1 = document.getElementsByClassName("feed1");
+        //var feed2 = document.getElementsByClassName("feed2");
+        //var feed3 = document.getElementsByClassName("feed3");
+        var i=0;
+        var sindex=1;
+
+        function slider(){
+        if(sindex>slide.length)
+        {
+                sindex=1;
+        }
+        for(i=0;i<slide.length;i++)
+        {
+           slide[i].style.display="none";
+           overcontent[i].style.display="none";
+           //feed1[i].style.display="none";
+           //feed2[i].style.display="none";
+           //feed3[i].style.display="none";
+        }
+
+        slide[sindex-1].style.display="block";
+        overcontent[sindex-1].style.display="block";
+        //feed1[sindex-1].style.display="block";
+        //feed2[sindex-1].style.display="block";
+        //feed3[sindex-1].style.display="block";
+        sindex++;
+        setTimeout(slider,8000);
+        }
+    </script>
+
+
+
+</head>
+<body onload="slider();"  >
+<header class="navmain">
+    <nav>
+        <ul class="navsub">
+            <li class="navlink" id="logo" ><a href="http://127.0.0.1:8000/">Aapki Kaksha<img height="30px" src="{% static 'images/img.png' %}" alt="logo"></a></li>
+            <li class="navlink"><a href="#knowus">ABOUT US</a></li>
+            <li class="navlink"><a href="#explore">COMMUNITY</a></li>
+            <li class="navlink"><a href="http://127.0.0.1:8000/contact">CONTACT</a></li>
+            <li class="navlink" id="logo1"><a href="http://127.0.0.1:8000/Login"><img height="25px" src="{% static 'images/img1.png' %}" alt="user_profile"></a></li>
+        </ul>
+    </nav>
+</header>
+<div class="hero">
+    <div class="slider">
+        <img src="{% static 'images/img.jpg' %}" alt="hero image" class="slide">
+        <img src="{% static 'images/img1.jpg' %}" alt="hero image" class="slide">
+        <img src="{% static 'images/img2.jpg' %}" alt="hero image" class="slide">
+        <img src="{% static 'images/img4.jpg' %}" alt="hero image" class="slide">
+    </div>
+
+    <div class="over" >
+        <div class="overcontent" >
+            <h1>Aapki Kaksha <img height="75px" src="{% static 'images/img.jpg' %}" alt="logo"></h1>
+            <h2>Its time to notice the un-noticed<br>Acknowledging the problem</h2>
+            <div>
+                <button type="button"><a href="#knowus">Know More</a></button>
+                <button type="button" class="herobutton"><a href="#">Let's get started</a></button>
+            </div>
+        </div>
+
+        <div class="overcontent">
+            <h1>Aapki Kaksha</h1>
+            <h2>Its time to notice the un-noticed.</h2>
+            <div>
+                <button type="button"><a href="#knowus">Know More</a></button>
+                <button type="button" class="herobutton"><a href="#">Let's get started</a></button>
+            </div>
+        </div>
+
+        <div class="overcontent">
+            <h1>Aapki Kaksha</h1>
+            <h2>Its time to notice the un-noticed</h2>
+            <div>
+                <button type="button"><a href="#knowus">Know More</a></button>
+                <button type="button" class="herobutton"><a href="#">Let's get started</a></button>
+            </div>
+        </div>
+
+        <div class="overcontent">
+            <h1>Aapki Kaksha</h1>
+            <h2>Its time to notice the un-noticed</h2>
+            <div>
+                <button type="button"><a href="#knowus">Know More</a></button>
+                <button type="button" class="herobutton"><a href="#">Let's get started</a></button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<br><br><br><br><br><br>
+<div class="flex-container" id="knowus" style="box-shadow: 10px 10px 8px black;border: 1px solid black;border-radius: 20px;">
+    <div class="newcontent" style="padding-top: 20px;">
+        <h1>Acknowledging the problem</h1><br>
+        <h2>Its time to notice the un-noticed</h2><br>
+        <h3>Dementia is an illness of old age, usually characterized by a progressive decline in cognitive functions from the 
+            previous level. Loss of memory for the recent events is a classical feature.</h3>
+    </div>
+    <div>
+        <img src="{% static 'images/img7.png' %}" style="margin-top: 20px;">
+    </div>
+</div>
+
+<br><br><br><br><br>
+
+<div class="flex-container" id="contri" style="box-shadow: 10px 10px 8px black;border: 1px solid black;border-radius: 20px;padding-top: 10px;">
+    <div>
+        <img style="padding-left:50px;height:350px;margin-right: 100px;padding-top:50px;" src="{% static 'images/img8.png' %}">
+    </div>
+    <div class="newcontent" >
+        <h1>Our contribution </h1><br>
+        <h2>Helping dementia patients re-developing their cognitive functions.</h2><br>
+        <h3>Dementia is an illness of old age, usually characterized by a progressive decline in cognitive functions from the 
+            previous level. Loss of memory for the recent events is a classical feature.</h3>
+    </div>
+
+</div>
+
+<br><br><br><br><br>
+
+<div>
+
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+}
+
+section{
+    height:100vh;
+    width:100%;
+    display:grid;
+    place-items : center;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.column{
+    width: 100%;
+    padding: 0 1em 1em 1em;
+    text-align: center;
+}
+
+.card{
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    padding: 2em 1.5em;
+    background: linear-gradient(#ffffff 50%, #2c7bfe 50%);
+    background-size: 100%  200%;
+    background-position: 0 2.5%;
+    border-radius: 5px;
+    box-shadow: 0 0 35px rgba(0,0,0,0.12);
+    cursor:pointer;
+    transition: 0.5s;
+}
+
+h3{
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f194c;
+    margin: 1em 0;
+}
+p{
+    color: #575a7b;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+}
+.icon-wrapper{
+    background-color: #2c7bfe;
+    position: relative;
+    margin: auto;
+    font-size: 30px;
+    height: 2.5em;
+    width: 2.5em;
+    color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+}
+
+.card:hover{
+    background-position: 0 100%;
+}
+.card:hover .icon-wrapper{
+    background-color: #ffffff;
+    color: #2c7bfe;
+}
+.card:hover h3{
+    color: #ffffff;
+}
+.card:hover h3{
+    color: #f0f0f0;
+}
+
+@media screen and (min-width: 768px){
+    section {
+        padding: 0 2 em;
+    }   
+    .column{
+        flex: 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px){
+    section {
+        padding: 1em 3em;
+    }   
+    .column{
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+    </style>
+
+<section>
+    <div class="'row">
+        <h2 class = "section-heading"?>Our Engagement</h2>
+    </div>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fa-light fa-game-console-handheld"></i>
+
+                </div>
+                <h3>Chair Excercises</h3>
+                <p>Lorem ipsum dolor sit amet.
+                    vero magni exercitationem. Obcaecati a
+                    utem culpa maiores reiciendis labor</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-game-board-simple"></i>
+                </div>
+                <h3>Free hand Drawing</h3>
+                <p> utem culpa maiores reiciendis labo
+                    Lorem ipsum dolor sit amet.
+                    vero magni exercitationem. Obcaecatir</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-game-board-simple"></i>
+                </div>
+                <h3>Reading</h3>
+                <p> Lore Lorem ipsum dolor sit.
+                     ni exercitationem. Obcaecati a
+                    utem culpa maiores reiciendis labor</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-game-board-simple"></i>
+                </div>
+                <h3>Memory Cards</h3>
+                <p>Lorem ipsum dolor sit amet.
+                    vero magni exercitationem. Obcaecati a
+                    utem culpa maiores reiciendis labor</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-game-board-simple"></i>
+                </div>
+                <h3>Basic Math</h3>
+                <p> utem culpa maiores reiciendis labo
+                    Lorem ipsum dolor sit amet.
+                    vero magni exercitationem. Obcaecatir</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-game-board-simple"></i>
+                </div>
+                <h3>Item Identification</h3>
+                <p> Lore Lorem ipsum dolor sit.
+                     ni exercitationem. Obcaecati a
+                    utem culpa maiores reiciendis labor</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-game-board-simple"></i>
+                </div>
+                <h3>Tic Tac toe</h3>
+                <p>Lorem ipsum dolor sit amet.
+                    vero magni exercitationem. Obcaecati a
+                    utem culpa maiores reiciendis labor</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-game-board-simple"></i>
+                </div>
+                <h3>Mediation</h3>
+                <p> utem culpa maiores reiciendis labo
+                    Lorem ipsum dolor sit amet.
+                    vero magni exercitationem. Obcaecatir</p>
+            </div>
+        </div>
+        <div class="column">
+            <div class="card">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-game-board-simple"></i>
+                </div>
+                <h3>Humor</h3>
+                <p> Lore Lorem ipsum dolor sit.
+                     ni exercitationem. Obcaecati a
+                    utem culpa maiores reiciendis labor</p>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+
+<br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+<div class="flex-container" style="background-color:#10316b;color:white;padding-left:45px;padding-bottom:35px;padding-top:15px;">
+    <div class="flex2div">
+        <h1>ProctorEd<img style="width:50px;height:50px;" src="{% static 'images/img.jpg' %}"></h1>
+        <h3 style="font-size:15px;color:#39bdc8;text-align:center;">Connect to us on given social media handles,you can contribute on github and discord any technical
+        queries can be resolved by the provided documentation.Hoping you will connect us soon!!!</h3>
+        <button><a style="text-decoration:none;" href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"><img src="{% static 'images/img20.png' %}" ></a></button>
+        <button><a style="text-decoration:none;" href="https://www.linkedin.com/signup"><img src="{% static 'images/img21.png' %}" ></a></button>
+        <button><a style="text-decoration:none;" href="https://www.facebook.com/"><img src="{% static 'images/img22.png' %}" ></a></button>
+        <button><a style="text-decoration:none;" href="https://www.youtube.com/"><img src="{% static 'images/img23.png' %}" ></a></button>
+    </div>
+
+    <div style="padding-left:20px;">
+        <h2 style="padding-left:35px;">Contribute</h2>
+        <ul style="list-style:none;">
+            <li><a style="text-decoration:none;color:#b4f1f1;" href="#">Github</a></li>
+            <li><a style="text-decoration:none;color:#b4f1f1;" href="https://discord.com/">Discord</a></li>
+        </ul>
+    </div>
+
+    <div style="padding-left:20px;">
+        <h2 style="padding-left:40px;">Navigate</h2>
+        <ul style="list-style:none;">
+            <li><a style="text-decoration:none;color:#b4f1f1;" href="#knowus">Know US</a></li>
+            <li><a style="text-decoration:none;color:#b4f1f1;" href="#explore">Explore</a></li>
+            <li><a style="text-decoration:none;color:#b4f1f1;" href="#">Participate</a></li>
+            <li><a style="text-decoration:none;color:#b4f1f1;" href="#pricing">Plans</a></li>
+        </ul>
+    </div>
+
+    <div style="padding-left:20px;">
+        <h2 style="padding-left:40px;">DOCS</h2>
+        <ul style="list-style:none;">
+            <li ><a style="text-decoration:none;color:#b4f1f1;text-align:left;" href="#">Quiz Master</a></li>
+            <li><a style="text-decoration:none;color:#b4f1f1;" href="#">Candidate</a></li>
+            <li><a style="text-decoration:none;color:#b4f1f1;" href="#">Proctor</a></li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
